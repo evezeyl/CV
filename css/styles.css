@@ -1,103 +1,113 @@
-@import url("https://fonts.googleapis.com/css?family=Montserrat|Playfair+Display&display=swap");
-
-/* Main text is monserrat*/
-body {
-  font-family: "Montserrat", sans-serif;
-  font-weight: 300;
-  line-height: 1.3;
-  color: #444;
-}
-
-/* Give headers playfair font */
-h1,
-h2,
-h3 {
-  font-family: "Playfair Display", serif;
-  color: #000;
-}
-
-/* When in PDF export mode make sure superscripts are nice and small and italic */
-sup {
-  font-size: 0.45rem;
+/* Eve Styles*/
+/* Google Fonts font-family: 'Gelasio', serif; */
+@font-face {
+  font-family: 'Gelasio';
   font-style: italic;
+  font-weight: 400;
+  src: local('Gelasio Italic'), local('Gelasio-Italic'), url(https://fonts.gstatic.com/s/gelasio/v1/cIf_MaFfvUQxTTqS9CuRY0ED.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 
-/* Avoid the breaking within a section */
-.blocks {
-  break-inside: avoid;
+@font-face {
+  font-family: 'Gelasio';
+  font-style: italic;
+  font-weight: 700;
+  src: local('Gelasio Bold Italic'), local('Gelasio-BoldItalic'), url(https://fonts.gstatic.com/s/gelasio/v1/cIf6MaFfvUQxTTqS9CuZ2GQWn6pg.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 
-* {
-  /* Override default right margin for sidebar*/
-  --pagedjs-margin-right: 0.2in;
-  --pagedjs-margin-left: 0.2in;
+@font-face {
+  font-family: 'Gelasio';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Gelasio Regular'), local('Gelasio-Regular'), url(https://fonts.gstatic.com/s/gelasio/v1/cIf9MaFfvUQxTTqS9C6hYQ.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 
-/* Customize some of the sizing variables */
-:root {
-  --sidebar-width: 12rem; /* Shrink sidebar width  */
-  --sidebar-background-color: #f7fbff; /* Make sidebar blue */
-  --sidebar-horizontal-padding: 0.01in; /* Reduce sidebar padding */
-  --decorator-outer-dim: 10px; /* Make position deliniating circles larger */
-  --decorator-border: 2px solid #bdd7e7; /* Make timeline a blue as well*/
+@font-face {
+  font-family: 'Gelasio';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Gelasio Bold'), local('Gelasio-Bold'), url(https://fonts.gstatic.com/s/gelasio/v1/cIf4MaFfvUQxTTqS_JWEdGYmnQ.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 
-.details .place {
-  margin-top: 0.25rem;
-}
+/* Nb to import locally <style>
+@import url('https://fonts.googleapis.com/css?family=Gelasio:400,400i,700,700i&display=swap');
+</style> */
 
-.main-block:not(.concise) .details div {
-  padding-top: 0.005rem;
-}
-
-/* Laptop icon isn't centered by default which is lame */
-.fa-laptop {
-  margin-left: -3px;
-}
-
-/* When we have links at bottom in a list make sure they actually are numbered */
-#links li {
-  list-style-type: decimal;
-}
-
-/* Dont put the little fake list point in front of links */
-.aside li::before {
-  display: none;
-}
-
-/* Move closer to start and up towards header */
-.aside ul {
-  padding-left: 1rem;
-}
-
-.aside li::before {
+/* grid definition */
+.container {
+  display: grid;
+  max-width: auto;
   position: relative;
-  margin-left: -4.25pt;
-  content: "• ";
+  margin: auto;
+  grid-gap: 10px;
+  grid-template-areas: "nutshell nutshell side"
+                        "experience experience side"
+                        "education education side"
+                        "diverse diverse side "
+                        "diverse diverse side "
+                        "results results side"
+                        "foot foot foot";
+  grid-template-rows: repeat(7, 200px);
+  grid-template-columns: 2fr 2fr 1fr;
 }
 
-/* Make sure elements in asside are centered and have a nice small text */
-.aside {
-  width: calc(var(--sidebar-width) + 9px);
-  line-height: 1.2;
-  font-size: 0.75rem;
+
+/*grid elements definition */
+.nutshell {
+    grid-area: nutshell;
+    background-color: green;
 }
 
-/* Make little circle outline be a light blue */
-.decorator::after {
-  background-color: #08306b;
+.experience {
+    grid-area: experience;
+    background-color: blue;
 }
 
-/* Remove the fake bullets from lists */
-.aside li::before {
-  content: auto;
+.education {
+    grid-area: education;
+    background-color: green;
 }
 
-.skill-bar {
-  color: white;
-  padding: 0.1rem 0.25rem;
-  margin-top: 3px;
-  position: relative;
-  width: 100%;
+.diverse {
+    grid-area: diverse;
+    background-color: blue;
+    justify-content: space-between;
 }
 
+.results {
+    grid-area: results;
+    background-color: green;
+}
+
+.side {
+    grid-area: side;
+    background-color: yellow;
+}
+
+.foot {
+    grid-area: foot;
+    background-color: grey;
+}
+
+/*hierarchy*/
+body {
+  font-family: "Gelasio", "Times", serif;
+  line-height: 1.3;
+  color: black;
+}
+
+/*footer - work on that */
+footer {
+    /*grid-area: foot;
+    background-color: grey;*/
+}
+
+/*styles classes */
+.greyband {
+    background-color: "silver";
+    max-width: 100%;
+    display: block;
+}
