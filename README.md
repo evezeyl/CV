@@ -3,8 +3,7 @@
 <p>
 
 
-
-
-
-
 [Inspiration](https://github.com/nstrayer/cv)
+
+
+I want to automatize the building, but right now there is a HTML version (started learning HTML and CSS for that little project) 
