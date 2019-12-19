@@ -6,4 +6,8 @@
 [Inspiration](https://github.com/nstrayer/cv)
 
 
-I want to automatize the building, but right now there is a HTML version (started learning HTML and CSS for that little project) 
+I want to automatize the building (interaction R, HTML, CSS and Javascript), but right now there is a HTML version (started learning HTML and CSS for that little project).
+
+- commit: `e3074da` HTML-CSS version (prints ok as .pdf - so ready to send)
+
+- complexifying -> will be done in a new branch
