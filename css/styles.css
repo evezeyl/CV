@@ -161,4 +161,9 @@ footer {
     line-height: 1.5;
     font-size:12px;
     font-weight: normal;
+    margin-bottom: 2px;
+}
+
+li{
+  margin-bottom: 5px;
 }
