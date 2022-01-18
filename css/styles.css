@@ -130,6 +130,9 @@
     grid-area: foot;
 }
 
+
+
+
 /*hierarchy*/
 body {
   font-family: "Gelasio", "Times", serif;
@@ -149,6 +152,10 @@ footer {
     background-color:#CACFD2;
     max-width: 100%;
     display: block;
+}
+
+.underline {
+  text-decoration: underline;
 }
 
 .center {
