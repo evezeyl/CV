@@ -168,9 +168,18 @@ footer {
     line-height: 1.5;
     font-size:12px;
     font-weight: normal;
-    margin-bottom: 2px;
+    margin-bottom: 15px;
 }
 
-li{
-  margin-bottom: 5px;
+li {
+  margin-top: 0px;
+  margin-bottom: 4px;
 }
+
+/*
+h2 {
+  margin-top:10px;
+  margin-bottom: 2px;
+  line-height: 0px;
+}
+*/
